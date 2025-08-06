@@ -1,0 +1,29 @@
+@model IEnumerable<MeuProjeto.Models.Tarefa>
+
+<h2>Lista de Tarefas</h2>
+<p>
+    <a asp-action="Create">Criar Nova</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Concluída</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.Descricao</td>
+            <td>@item.Concluida</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

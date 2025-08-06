@@ -1,0 +1,14 @@
+@model MeuProjeto.Models.Tarefa
+
+<h2>Detalhes da Tarefa</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Descricao</dd>
+        <dt class="col-sm-2">Concluída</dt>
+        <dd class="col-sm-10">@Model.Concluida</dd>
+    </dl>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
